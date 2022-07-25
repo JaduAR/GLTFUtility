@@ -1,5 +1,4 @@
 ﻿using System;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -30,7 +29,7 @@ namespace Siccity.GLTFUtility {
 		public Shader GetDefaultMetallic() {
 #if UNITY_2019_1_OR_NEWER
 			if (GraphicsSettings.renderPipelineAsset)
-				if (PlayerSettings.colorSpace == ColorSpace.Linear)
+				if (QualitySettings.activeColorSpace == ColorSpace.Linear)
 				{
 					return Shader.Find("GLTFUtility/URP-Linear/Standard (Metallic)");
 				}
@@ -44,7 +43,7 @@ namespace Siccity.GLTFUtility {
 		public Shader GetDefaultMetallicBlend() {
 #if UNITY_2019_1_OR_NEWER
 			if (GraphicsSettings.renderPipelineAsset)
-				if (PlayerSettings.colorSpace == ColorSpace.Linear)
+				if (QualitySettings.activeColorSpace == ColorSpace.Linear)
 				{
 					return Shader.Find("GLTFUtility/URP-Linear/Standard Transparent (Metallic)");
 				}
@@ -58,7 +57,7 @@ namespace Siccity.GLTFUtility {
 		public Shader GetDefaultSpecular() {
 #if UNITY_2019_1_OR_NEWER
 			if (GraphicsSettings.renderPipelineAsset)
-				if (PlayerSettings.colorSpace == ColorSpace.Linear)
+				if (QualitySettings.activeColorSpace == ColorSpace.Linear)
 				{
 					return Shader.Find("GLTFUtility/URP-Linear/Standard (Specular)");
 				}
@@ -72,7 +71,7 @@ namespace Siccity.GLTFUtility {
 		public Shader GetDefaultSpecularBlend() {
 #if UNITY_2019_1_OR_NEWER
 			if (GraphicsSettings.renderPipelineAsset)
-				if (PlayerSettings.colorSpace == ColorSpace.Linear)
+				if (QualitySettings.activeColorSpace == ColorSpace.Linear)
 				{
 					return Shader.Find("GLTFUtility/URP-Linear/Standard Transparent (Specular)");
 				}
