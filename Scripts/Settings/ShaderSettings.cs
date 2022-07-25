@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -28,7 +29,13 @@ namespace Siccity.GLTFUtility {
 
 		public Shader GetDefaultMetallic() {
 #if UNITY_2019_1_OR_NEWER
-			if (GraphicsSettings.renderPipelineAsset) return Shader.Find("GLTFUtility/URP/Standard (Metallic)");
+			if (GraphicsSettings.renderPipelineAsset)
+				if (PlayerSettings.colorSpace == ColorSpace.Linear)
+				{
+					return Shader.Find("GLTFUtility/URP-Linear/Standard (Metallic)");
+				}
+				else
+					return Shader.Find("GLTFUtility/URP/Standard (Metallic)");
 			else
 #endif
 				return Shader.Find("GLTFUtility/Standard (Metallic)");
@@ -36,7 +43,13 @@ namespace Siccity.GLTFUtility {
 
 		public Shader GetDefaultMetallicBlend() {
 #if UNITY_2019_1_OR_NEWER
-			if (GraphicsSettings.renderPipelineAsset) return Shader.Find("GLTFUtility/URP/Standard Transparent (Metallic)");
+			if (GraphicsSettings.renderPipelineAsset)
+				if (PlayerSettings.colorSpace == ColorSpace.Linear)
+				{
+					return Shader.Find("GLTFUtility/URP-Linear/Standard Transparent (Metallic)");
+				}
+				else
+					return Shader.Find("GLTFUtility/URP/Standard Transparent (Metallic)");
 			else
 #endif
 				return Shader.Find("GLTFUtility/Standard Transparent (Metallic)");
@@ -44,7 +57,13 @@ namespace Siccity.GLTFUtility {
 
 		public Shader GetDefaultSpecular() {
 #if UNITY_2019_1_OR_NEWER
-			if (GraphicsSettings.renderPipelineAsset) return Shader.Find("GLTFUtility/URP/Standard (Specular)");
+			if (GraphicsSettings.renderPipelineAsset)
+				if (PlayerSettings.colorSpace == ColorSpace.Linear)
+				{
+					return Shader.Find("GLTFUtility/URP-Linear/Standard (Specular)");
+				}
+				else
+					return Shader.Find("GLTFUtility/URP/Standard (Specular)");
 			else
 #endif
 				return Shader.Find("GLTFUtility/Standard (Specular)");
@@ -52,7 +71,13 @@ namespace Siccity.GLTFUtility {
 
 		public Shader GetDefaultSpecularBlend() {
 #if UNITY_2019_1_OR_NEWER
-			if (GraphicsSettings.renderPipelineAsset) return Shader.Find("GLTFUtility/URP/Standard Transparent (Specular)");
+			if (GraphicsSettings.renderPipelineAsset)
+				if (PlayerSettings.colorSpace == ColorSpace.Linear)
+				{
+					return Shader.Find("GLTFUtility/URP-Linear/Standard Transparent (Specular)");
+				}
+				else
+					return Shader.Find("GLTFUtility/URP/Standard Transparent (Specular)");
 			else
 #endif
 				return Shader.Find("GLTFUtility/Standard Transparent (Specular)");
