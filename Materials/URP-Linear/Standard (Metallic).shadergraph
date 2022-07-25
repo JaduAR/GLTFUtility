@@ -568,7 +568,11 @@
             "m_Guid": ""
         }
     },
+<<<<<<< Updated upstream
     "m_Path": "GLTFUtility/URP",
+=======
+    "m_Path": "GLTFUtility/URP-Linear",
+>>>>>>> Stashed changes
     "m_ConcretePrecision": 0,
     "m_PreviewMode": 2,
     "m_OutputNode": {
